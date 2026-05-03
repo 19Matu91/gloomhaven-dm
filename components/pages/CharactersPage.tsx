@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { Character, CharacterAbility, CharacterAdditionalCardsSection, Option } from "../../common/types";
+import { Character, CharacterAbility, Option } from "../../common/types";
 import {
   assignCardIds,
   customSort,
@@ -16,7 +16,6 @@ import CardList from "../CardList";
 import Sort from "../Sort";
 import ToastMessage from "../ToastMessage";
 import { characterAbilityCards } from "../../data/character-ability-cards";
-import { characterAdditionalCards } from "../../data/character-additional-cards";
 import { useCraftingStore } from "../../hooks/useCraftingStore";
 import cardTranslations from "../../data/card-translations.json";
 import { serializeBuild, deserializeBuild } from "../../common/shareUtils";
@@ -73,21 +72,6 @@ const CharacterDetails = ({ character }: CharacterDetailsProps) => {
   );
 };
 
-type AdditionalCardsProps = {
-  sections: CharacterAdditionalCardsSection[];
-};
-
-const AdditionalCards = ({ sections }: AdditionalCardsProps) => {
-  return (
-    <>
-      {sections.map((section) => (
-        <div key={section.label} className="additional-cards-section">
-          <CardList cardList={section.cards} horizontal={section.horizontal} />
-        </div>
-      ))}
-    </>
-  );
-};
 
 type PageProps = {
   searchResults: SearchResult;
@@ -106,7 +90,6 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
     activeDeck,
     activeDeckClass,
     clearDeck,
-    setDeck,
     toggleCard,
     viewActiveHand,
     toggleViewActiveHand,
@@ -115,9 +98,8 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
     setToastMessage,
   } = useCraftingStore();
 
-  const { abilityCards, additionalCards } = searchResults;
+  const { abilityCards } = searchResults;
   const maxHandSize = abilityCards?.filter((c) => c.level === 1).length || 9;
-  const showAdditionalCards = additionalCards && !isCraftingMode && !showCharacterDetails;
 
   const handleSortOrderChange = (newValue: string) => {
     setsortOrder(newValue);
@@ -243,8 +225,6 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
           {isCraftingMode && <div style={{ padding: "36px" }} />}
         </>
       )}
-      {showAdditionalCards && <AdditionalCards sections={additionalCards} />}
-
       {isCraftingMode && !showCharacterDetails && (
         <div className="build-toolbar" style={{ borderTopColor: character?.colour || "#555" }}>
           <span className="build-toolbar-label">
@@ -277,7 +257,6 @@ export type CharacterPageProps = {
 
 export type SearchResult = {
   abilityCards: CharacterAbility[];
-  additionalCards: CharacterAdditionalCardsSection[] | null;
 };
 
 export const characterSearchResults = (query: { [key: string]: string | string[] }): SearchResult => {
@@ -288,7 +267,6 @@ export const characterSearchResults = (query: { [key: string]: string | string[]
   if (character == null) {
     return {
       abilityCards: [],
-      additionalCards: null,
     };
   }
 
@@ -297,11 +275,8 @@ export const characterSearchResults = (query: { [key: string]: string | string[]
       ?.filter((card) => card.level !== 0)
       .sort(customSort("level", "asc")) || [];
 
-  const additionalCards = characterAdditionalCards[game]?.[character?.class.toUpperCase()];
-
   return {
     abilityCards: assignCardIds(sorted),
-    additionalCards: additionalCards || null,
   };
 };
 

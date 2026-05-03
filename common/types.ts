@@ -29,13 +29,6 @@ export interface Card {
   imageBack?: string;
 }
 
-export interface MultiLevelCard {
-  id?: number;
-  name: string;
-  image: string[];
-  imageBack?: string[];
-}
-
 export type CharacterAbility = {
   id?: number;
   name: string;
@@ -46,18 +39,6 @@ export type CharacterAbility = {
   level: number;
   imageBack?: string;
   milestone?: boolean;
-};
-
-export type CharacterAdditionalCardsSection = {
-  label: string;
-  cards: CharacterAdditionalCard[];
-  horizontal?: boolean;
-};
-
-export type CharacterAdditionalCard = {
-  name: string;
-  image: string;
-  imageBack?: string;
 };
 
 export type Item = {

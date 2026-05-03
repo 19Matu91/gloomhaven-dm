@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 
-import { Card, MultiLevelCard } from "../common/types";
+import { Card } from "../common/types";
 import { getBaseUrl } from "../common/utils";
 import Empty from "./Empty";
 
@@ -140,92 +140,6 @@ const FlipCardWrapper = ({
   );
 };
 
-type MultiLevelCardProps = {
-  multiLevelCard: MultiLevelCard;
-};
-
-const MultiLevelCard = ({ multiLevelCard }: MultiLevelCardProps) => {
-  const [level, setLevel] = useState(1);
-  const [flipped, setFlipped] = useState(false);
-  const maxLevel = multiLevelCard.image.length;
-
-  const handleBtnClick = () => {
-    setFlipped(!flipped);
-  };
-
-  const updateLevel = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newLevel = parseInt(event.target.value);
-    if (!newLevel || newLevel < 1 || newLevel > 9) return;
-    setLevel(newLevel);
-  };
-
-  const card = {
-    id: multiLevelCard.id,
-    name: multiLevelCard.name,
-    image: multiLevelCard.image[level - 1],
-    imageBack: multiLevelCard.imageBack?.[level - 1],
-  };
-
-  return (
-    <div>
-      <div className="multi-level-card-controller">
-        <div className="slider">
-          <span>{"Nivel: " + (level || "1")}</span>
-          <input
-            type="range"
-            name="level"
-            id="level"
-            min="1"
-            max={maxLevel.toString()}
-            onInput={updateLevel}
-            value={level || 1}
-          />
-        </div>
-      </div>
-      <FlipCard key={card.image} card={card} flipped={flipped} handleBtnClick={handleBtnClick} />
-    </div>
-  );
-};
-
-type MultiLevelCardListProp = {
-  cardList: MultiLevelCard[];
-};
-
-export const MultiLevelCardList = ({ cardList }: MultiLevelCardListProp) => {
-  const [data, setData] = useState(cardList.slice(0, CARDS_PER_PAGE));
-
-  const loadMore = (page: number) => {
-    setData(cardList?.slice(0, (page + 1) * CARDS_PER_PAGE));
-  };
-
-  useEffect(() => {
-    setData(cardList?.slice(0, CARDS_PER_PAGE));
-  }, [cardList]);
-
-  if (data?.length === 0) return <Empty />;
-
-  return (
-    <InfiniteScroll
-      className="card-list"
-      hasMore={data?.length < cardList.length}
-      loader={<h4 key={0}>Cargando...</h4>}
-      loadMore={loadMore}
-      pageStart={0}
-    >
-      {data?.map((multiLevelCard) => (
-        <MultiLevelCard key={multiLevelCard.id} multiLevelCard={multiLevelCard} />
-      ))}
-      {[...Array(4)].map((_, idx) => (
-        <div key={idx}>
-          <div className="multi-level-card-controller">
-            <div className="slider"> </div>
-          </div>
-          <div className={"card"} />
-        </div>
-      ))}
-    </InfiniteScroll>
-  );
-};
 
 type CardTranslationEntry = {
   titulo: string;
