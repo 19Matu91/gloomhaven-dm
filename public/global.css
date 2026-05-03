@@ -50,9 +50,9 @@ h1, h2, h3, h4 {
 
 /* --- SCROLLBAR --- */
 ::-webkit-scrollbar        { width: 7px; }
-::-webkit-scrollbar-track  { background: var(--background); }
-::-webkit-scrollbar-thumb  { background: var(--primary); border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
+::-webkit-scrollbar-track  { background: #f3f3f3; }
+::-webkit-scrollbar-thumb  { background: #004c48; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #ba4c00; }
 
 ::selection {
   background-color: var(--primary);
