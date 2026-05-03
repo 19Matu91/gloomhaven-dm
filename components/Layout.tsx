@@ -1,68 +1,61 @@
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useState } from "react";
 
-import { defaultDescription, defaultTitle, getBaseUrl, getGame, verifyQueryParam } from "../common/utils";
-import { DropdownNav } from "../components/Dropdown";
-import { games } from "../data/games";
-import Settings from "./Settings";
+import { defaultDescription, defaultTitle, getBaseUrl } from "../common/utils";
 
-type SettingsAnchorProps = {
-  openSettingsDrawer: () => void;
-};
+const jotlRoutes = [
+  { id: "characters", name: "Personajes" },
+  { id: "items", name: "Objetos" },
+  { id: "monsters", name: "Monstruos" },
+];
 
-const SettingsAnchor = ({ openSettingsDrawer }: SettingsAnchorProps) => {
-  return (
-    <div className="header-link view-more" onClick={openSettingsDrawer}>
-      <span>
-        <FontAwesomeIcon className="header-icon" icon={faGear} />
-        <span>Settings</span>
-      </span>
-    </div>
-  );
-};
-
-type TopBarProps = {
-  openSettingsDrawer: () => void;
-};
-
-const TopBar = ({ openSettingsDrawer }: TopBarProps) => {
+const TopBar = () => {
   const router = useRouter();
-  const game = verifyQueryParam(router.query.game, "gh");
-  const gameRoutes = getGame(game)?.routes || [];
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const path = router.asPath.split("/");
-  let cardType = path.length >= 3 ? path[2] : null;
+  let cardType = path.length >= 2 ? path[1] : null;
   if (cardType) {
     cardType = cardType.split("?")[0];
   }
-
-  const handleGameChange = (newGame: string) => {
-    let path = `/${newGame}`;
-    let newGameRoutes = getGame(newGame)?.routes || [];
-    if (!newGameRoutes.some((route) => route.id === cardType)) {
-      return path;
-    }
-
-    if (cardType) path += `/${cardType}`;
-    return path;
-  };
-
-  const handleCardTypeChange = (newCardType: string) => {
-    return `/${game}/${newCardType}`;
-  };
+  const activeRoute = cardType || "characters";
 
   return (
     <nav className="topbar">
       <div className="topbar-inner">
-        <div className="header-links">
-          <DropdownNav href={handleGameChange} options={games} value={game} />
-          <DropdownNav href={handleCardTypeChange} options={gameRoutes} value={cardType || "characters"} />
+        <div className="nav-desktop">
+          {jotlRoutes.map((route) => (
+            <Link
+              key={route.id}
+              href={`/${route.id}`}
+              className={`nav-link ${activeRoute === route.id ? "nav-link-active" : ""}`}
+            >
+              {route.name}
+            </Link>
+          ))}
         </div>
-        <SettingsAnchor openSettingsDrawer={openSettingsDrawer} />
+        <div className="nav-mobile">
+          <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </button>
+          {menuOpen && (
+            <div className="nav-mobile-menu">
+              {jotlRoutes.map((route) => (
+                <Link
+                  key={route.id}
+                  href={`/${route.id}`}
+                  className={`nav-mobile-link ${activeRoute === route.id ? "nav-link-active" : ""}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {route.name}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );
@@ -75,8 +68,6 @@ type LayoutProps = {
 };
 
 const Layout = ({ children, description, title }: LayoutProps) => {
-  const [settingDrawerOpen, setSettingDrawerOpen] = useState(false);
-
   return (
     <>
       <Head>
@@ -94,8 +85,7 @@ const Layout = ({ children, description, title }: LayoutProps) => {
           gtag("config", "G-FFL6ZJNJ4T");
         `}
       </Script>
-      <Settings open={settingDrawerOpen} onClose={() => setSettingDrawerOpen(false)} />
-      <TopBar openSettingsDrawer={() => setSettingDrawerOpen(true)} />
+      <TopBar />
       <main className="main">{children}</main>
     </>
   );

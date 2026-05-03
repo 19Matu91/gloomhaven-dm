@@ -1,0 +1,137 @@
+﻿{
+  "character-ability-cards/jaws-of-the-lion/DE/jl-collateral-damage.png": {
+    "titulo": "Daño Colateral",
+    "superior": "Destruye un obstáculo u objetivo adyacente. Si lo haces, gana 1 EXP y realiza ATACAR 2 (modificado por rango). EMPUJAR 2. Objetivo: todos los enemigos adyacentes al obstáculo u objetivo destruido. Con obstáculo destruido: +2 Ataque, 1 EXP. PÉRDIDA.",
+    "inferior": "MOVER 2. Destruye un obstáculo adyacente. Si lo haces, gana 1 EXP y todos los enemigos en la misma habitación que el obstáculo destruido sufren 2 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-crash-protocol.png": {
+    "titulo": "Protocolo de Impacto",
+    "superior": "En tus próximos cuatro ataques dirigidos a enemigos adyacentes a una pared, añade +2 Ataque. PERSISTENTE (consume 1 carga por ataque hasta agotar las 4 cargas, luego se descarta).",
+    "inferior": "MOVER 3. SALTAR. Cada vez que entres en un hexágono que contenga un obstáculo con este movimiento, destruye ese obstáculo y añade +1 Mover. Con obstáculo destruido: todos los enemigos atravesados sufren 1 de daño, 1 EXP."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-crushing-weight.png": {
+    "titulo": "Peso Aplastante",
+    "superior": "ATACAR 3. Añade +2 Ataque y gana 1 EXP si el objetivo está adyacente a una pared.",
+    "inferior": "MOVER 2. Un enemigo adyacente que esté adyacente a una pared sufre 2 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-drill-fist.png": {
+    "titulo": "Puño Taladro",
+    "superior": "ATACAR 1. ATACAR 1. ATACAR 2. Ignora el valor de ESCUDO del objetivo, añade ENVENENAR y gana 1 EXP si este ataque se dirige al mismo enemigo que las dos habilidades de Ataque anteriores.",
+    "inferior": "MOVER 2. Coloca uno de tus tokens de personaje sobre un enemigo normal o élite adyacente. Tú y todos los aliados podéis ignorar el valor de ESCUDO de ese enemigo esta ronda. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-dust-cloud.png": {
+    "titulo": "Nube de Polvo",
+    "superior": "ATACAR 2. Objetivo: todos los enemigos adyacentes. EMPUJAR 1. CONFUNDIR.",
+    "inferior": "MOVER 2. Destruye un obstáculo adyacente. Si lo haces, gana 1 EXP y realiza ESCUDO 2. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-explode.png": {
+    "titulo": "Explosión",
+    "superior": "Destruye un obstáculo adyacente. Si lo haces, gana 2 EXP y realiza ATURDIR. Objetivo: todos los enemigos adyacentes al obstáculo destruido. Cada objetivo sufre 2 de daño. PÉRDIDA.",
+    "inferior": "MOVER 4. Con obstáculo destruido: +2 Mover."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-explosive-blitz.png": {
+    "titulo": "Embestida Explosiva",
+    "superior": "ATACAR 2. Rango 4.",
+    "inferior": "MOVER 3. Si abriste una puerta durante el movimiento, realiza ATURDIR. Objetivo: todos los enemigos dentro del Rango 3. 1 EXP. PÉRDIDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-extra-fuel.png": {
+    "titulo": "Combustible Extra",
+    "superior": "ATACAR 3. Añade +2 Ataque, HERIR y gana 1 EXP si el objetivo está adyacente a una pared.",
+    "inferior": "MOVER 5. Con obstáculo destruido: ATACAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-fire-bombs.png": {
+    "titulo": "Bombas de Fuego",
+    "superior": "ATACAR 2. Rango 4. Objetivo 2.",
+    "inferior": "MOVER 2. Destruye un obstáculo adyacente. Si lo haces, gana 1 EXP y todos los enemigos adyacentes al obstáculo destruido sufren 2 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-gut-punch.png": {
+    "titulo": "Golpe al Estómago",
+    "superior": "ATACAR 5. Con obstáculo destruido: +1 Ataque, EMPUJAR 2, 1 EXP. Con obstáculo destruido (élite): +1 Ataque, INMOVILIZAR, 1 EXP.",
+    "inferior": "ATACAR 3. ATURDIR."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-implode.png": {
+    "titulo": "Implosión",
+    "superior": "ATACAR 3. Con obstáculo destruido: +1 Ataque, CONFUNDIR, 1 EXP.",
+    "inferior": "MOVER 3. Destruye un obstáculo dentro del Rango 3."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-insult-to-injury.png": {
+    "titulo": "Añadir Insulto a la Herida",
+    "superior": "En tus próximos tres ataques dirigidos a enemigos a los que ya atacaste antes en la misma ronda, añade +3 Ataque. PERSISTENTE (consume 1 carga por ataque hasta agotar las 3 cargas, luego se descarta).",
+    "inferior": "MOVER 4. Añade INMOVILIZAR a todos tus ataques esta ronda. Con obstáculo destruido: también añade CONFUNDIR, 1 EXP. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-knock-out-the-support.png": {
+    "titulo": "Eliminar el Apoyo",
+    "superior": "ATACAR 3. Todas las curaciones dirigidas al objetivo no tienen efecto esta ronda. Para indicarlo, coloca uno de tus tokens de personaje sobre el objetivo.",
+    "inferior": "MOVER 2. Destruye un obstáculo adyacente. Si lo haces, gana 1 EXP y realiza FORTALECER sobre ti mismo."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-level.png": {
+    "titulo": "Nivelar",
+    "superior": "ATACAR 3. Añade +3 Ataque y gana 1 EXP si el objetivo es un objetivo de misión.",
+    "inferior": "Añade +1 Ataque a todos tus ataques cuerpo a cuerpo esta ronda. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-lobbed-charge.png": {
+    "titulo": "Carga Lanzada",
+    "superior": "Crea una trampa de CONFUNDIR de 3 de daño en un hexágono vacío dentro del Rango 3.",
+    "inferior": "MOVER 4. Designa un enemigo adyacente. Si cada hexágono del movimiento te acercó a ese enemigo, realiza ATACAR X, EMPUJAR 2 sobre ese enemigo, donde X es el número de hexágonos que te moviste. 1 EXP. PÉRDIDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-mech-suit.png": {
+    "titulo": "Traje Mecánico",
+    "superior": "Tu valor máximo de puntos de vida aumenta en 5. CURAR 10 sobre ti mismo. ESCUDO 1 (2 cargas). PÉRDIDA.",
+    "inferior": "MOVER 2. SAQUEAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-micro-missiles.png": {
+    "titulo": "Microproyectiles",
+    "superior": "ATACAR 2. Rango 3. Objetivo 4.",
+    "inferior": "MOVER 2. Todos los objetivos de misión dentro del Rango 3 sufren 3 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-nowhere-to-run.png": {
+    "titulo": "Sin Escapatoria",
+    "superior": "ATACAR 4. Añade +1 Ataque por cada hexágono de pared, hexágono de obstáculo, objetivo de misión, figura o trampa adyacente al objetivo. ESCUDO 2. PÉRDIDA.",
+    "inferior": "MOVER 3. Mueve una trampa adyacente a un hexágono vacío adyacente a ti."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-one-two-punch.png": {
+    "titulo": "Golpe Doble",
+    "superior": "ATACAR 2. ATACAR 1. Añade EMPUJAR 2, CONFUNDIR y gana 1 EXP si este ataque se dirige al mismo enemigo que la habilidad de Ataque anterior.",
+    "inferior": "ATACAR 1. SAQUEAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-piston-punch.png": {
+    "titulo": "Puñetazo de Émbolo",
+    "superior": "ATACAR 2. EMPUJAR 2. Con obstáculo destruido: +1 Ataque, +1 EMPUJAR, 1 EXP.",
+    "inferior": "ATURDIR. Objetivo: un enemigo adyacente. Con obstáculo destruido: ENVENENAR."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-remote-detonation.png": {
+    "titulo": "Detonación Remota",
+    "superior": "Destruye un obstáculo dentro del Rango 4. Si lo haces, realiza ATACAR 2 sobre todos los enemigos adyacentes al obstáculo destruido. Con obstáculo destruido: +1 Ataque, 1 EXP.",
+    "inferior": "Crea tres trampas de 3 de daño en hexágonos vacíos dentro del Rango 4. ESCUDO 2. PÉRDIDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-robotic-enhancement.png": {
+    "titulo": "Mejora Robótica",
+    "superior": "ATACAR 2. ATURDIR.",
+    "inferior": "MOVER 4. Este movimiento no se ve afectado por terreno difícil."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-rubble.png": {
+    "titulo": "Escombros",
+    "superior": "Designa un hexágono dentro del Rango 3 que contenga un token de destrucción. Todos los aliados y enemigos en ese hexágono o adyacentes a él sufren 2 de daño. 1 EXP.",
+    "inferior": "MOVER 2. Crea una trampa de 2 de daño en un hexágono vacío adyacente que contenga un token de destrucción."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-the-bigger-one.png": {
+    "titulo": "El Más Grande",
+    "superior": "ATACAR 4. Rango 2. Área (patrón hexagonal grande). Destruye todos los obstáculos en el área objetivo. Todos los aliados en el área objetivo sufren 2 de daño. PÉRDIDA.",
+    "inferior": "MOVER 3. Todos los enemigos adyacentes que estén adyacentes a una pared sufren 2 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-the-big-one.png": {
+    "titulo": "El Grande",
+    "superior": "ATACAR 3. Rango 2. Área (patrón hexagonal). PÉRDIDA.",
+    "inferior": "MOVER 3. Destruye un obstáculo adyacente. Si lo haces, gana 1 EXP y realiza BENDECIR sobre ti mismo."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-wholesale-destruction.png": {
+    "titulo": "Destrucción Total",
+    "superior": "ATACAR 2. ATACAR 2. MOVER 2. ATACAR 3. Con obstáculo destruido en cualquier ataque: +1 Ataque, HERIR.",
+    "inferior": "Puedes realizar cualquier habilidad de destruir obstáculo como si un hexágono vacío dentro del rango de la habilidad contuviera un obstáculo. Si lo haces, no coloques un token de destrucción. ESCUDO 2. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/DE/jl-windup.png": {
+    "titulo": "Preparación",
+    "superior": "En tus próximos dos ataques, añade +2 Ataque. PERSISTENTE (consume 1 carga por ataque hasta agotar las 2 cargas, luego se descarta).",
+    "inferior": "Duplica el valor de tu próxima habilidad de Mover. PERSISTENTE (se descarta tras el siguiente Mover)."
+  }
+}

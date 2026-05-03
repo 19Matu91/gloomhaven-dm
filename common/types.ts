@@ -1,5 +1,3 @@
-import { ParsedUrlQuery } from "querystring";
-
 export type Game = {
   id: string;
   name: string;
@@ -76,16 +74,6 @@ export type Item = {
   prosperity?: number;
 };
 
-export type Event = {
-  id: number;
-  name: string;
-  game: string;
-  eventType: string;
-  image: string;
-  imageBack?: string;
-  season?: string;
-};
-
 export type Monster = {
   id: string;
   name: string;
@@ -93,23 +81,6 @@ export type Monster = {
   statCards: string[];
   abilityCards: string[];
   isVertical: boolean;
-};
-
-export type Building = {
-  id: number;
-  name: string;
-  base: boolean;
-  game: string;
-  image: string[];
-  imageBack?: string[];
-};
-
-export type Pet = {
-  id: number;
-  name: string;
-  game: string;
-  image: string;
-  imageBack?: string;
 };
 
 export type Option = {
@@ -121,28 +92,6 @@ export type MonsterSearch = {
   monster: Monster;
   monsterList: Option[];
 };
-
-export interface Spoilers {
-  buildings: Set<string>;
-  characters: Set<string>;
-  items: Record<string, string | boolean>;
-  level: number;
-  loading: boolean;
-}
-
-export interface CharacterParams extends ParsedUrlQuery {
-  game: string;
-  character: string;
-}
-
-export interface MonsterParams extends ParsedUrlQuery {
-  game: string;
-  monster: string;
-}
-
-export interface GameParams extends ParsedUrlQuery {
-  game: string;
-}
 
 export interface SearchResult {
   name: number | string;

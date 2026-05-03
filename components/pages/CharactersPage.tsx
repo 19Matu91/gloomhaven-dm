@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { Character, CharacterAbility, CharacterAdditionalCardsSection, Option, Spoilers } from "../../common/types";
+import { Character, CharacterAbility, CharacterAdditionalCardsSection, Option } from "../../common/types";
 import {
   assignCardIds,
   customSort,
@@ -12,33 +12,20 @@ import {
   getDefaultCharacterClass,
   verifyQueryParam,
 } from "../../common/utils";
-import { useSpoilers } from "../../hooks/useSpoilers";
-import CardList from "..//CardList";
-import Sort from "..//Sort";
-import Empty from "../Empty";
+import CardList from "../CardList";
+import Sort from "../Sort";
 import ToastMessage from "../ToastMessage";
-import { characters } from "../../data/characters";
 import { characterAbilityCards } from "../../data/character-ability-cards";
 import { characterAdditionalCards } from "../../data/character-additional-cards";
 import { useCraftingStore } from "../../hooks/useCraftingStore";
+import cardTranslations from "../../data/card-translations.json";
 import { serializeBuild, deserializeBuild } from "../../common/shareUtils";
 
 const sortOrderOptions: Option[] = [
-  { id: "level", name: "Level" },
-  { id: "initiative", name: "Initiative" },
-  { id: "name", name: "Name" },
+  { id: "level", name: "Nivel" },
+  { id: "initiative", name: "Iniciativa" },
+  { id: "name", name: "Nombre" },
 ];
-
-const characterSpoilerFilter = (spoilers: Spoilers): ((card: CharacterAbility) => boolean) => {
-  const baseCharacterClasses = new Set(characters.filter((c) => c.base).map((c) => c.class));
-  const hiddenCharacterClasses = new Set(characters.filter((c) => c.hidden).map((c) => c.class));
-
-  return (card) =>
-    (baseCharacterClasses.has(card.class) ||
-      spoilers.characters?.has(card.class) ||
-      hiddenCharacterClasses.has(card.class)) &&
-    card.level < 1 + (spoilers.level || 1);
-};
 
 type ClassFilterProps = {
   characterClass: string;
@@ -57,7 +44,7 @@ const ClassFilter = ({ characterClass, game }: ClassFilterProps) => {
           <Link
             key={char.class}
             href={{
-              pathname: `/${game}/characters/${char.class}`,
+              pathname: `/characters/${char.class}`,
               query: {
                 ...(query.dir && { dir: query.dir }),
                 ...(query.order && { order: query.order }),
@@ -74,19 +61,16 @@ const ClassFilter = ({ characterClass, game }: ClassFilterProps) => {
 
 type CharacterDetailsProps = {
   character: Character;
-  isCharacterUnlocked: boolean;
 };
 
-const CharacterDetails = ({ character, isCharacterUnlocked }: CharacterDetailsProps) => {
-  if (isCharacterUnlocked)
-    return (
-      <div className="character-details">
-        <img alt="" src={getBaseUrl() + character.matImageBack} />
-        <img alt="" src={getBaseUrl() + character.matImage} />
-        <img alt="" src={getBaseUrl() + character.sheetImage} />
-      </div>
-    );
-  return <Empty />;
+const CharacterDetails = ({ character }: CharacterDetailsProps) => {
+  return (
+    <div className="character-details">
+      <img alt="" src={getBaseUrl() + character.matImageBack} />
+      <img alt="" src={getBaseUrl() + character.matImage} />
+      <img alt="" src={getBaseUrl() + character.sheetImage} />
+    </div>
+  );
 };
 
 type AdditionalCardsProps = {
@@ -112,7 +96,6 @@ type PageProps = {
 };
 
 const CharactersPage = ({ character, game, searchResults }: PageProps) => {
-  const { spoilers, updateSpoilers } = useSpoilers();
   const [showCharacterDetails, setShowCharacterDetails] = useState(false);
   const [sortOrder, setsortOrder] = useState("level");
   const [sortDirection, setSortDirection] = useState("asc");
@@ -134,23 +117,7 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
 
   const { abilityCards, additionalCards } = searchResults;
   const maxHandSize = abilityCards?.filter((c) => c.level === 1).length || 9;
-  const isCharacterUnlocked = spoilers.characters.has(character.class) || character.base;
-  const showAdditionalCards = additionalCards && isCharacterUnlocked && !isCraftingMode && !showCharacterDetails;
-
-  const updateLevel = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newLevel = parseInt(event.target.value);
-    if (!newLevel || newLevel < 1 || newLevel > 9) return;
-
-    updateSpoilers({ ...spoilers, level: newLevel });
-
-    if (isCraftingMode) {
-      const validImages = new Set(abilityCards?.filter((c) => c.level < 1 + newLevel).map((c) => c.image) || []);
-      const filteredDeck = activeDeck.filter((img) => validImages.has(img));
-      if (filteredDeck.length !== activeDeck.length) {
-        setDeck(filteredDeck);
-      }
-    }
-  };
+  const showAdditionalCards = additionalCards && !isCraftingMode && !showCharacterDetails;
 
   const handleSortOrderChange = (newValue: string) => {
     setsortOrder(newValue);
@@ -159,10 +126,7 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
     setSortDirection(newValue);
   };
 
-  let cardList =
-    abilityCards
-      ?.filter(characterSpoilerFilter(spoilers))
-      .sort(customSort(sortOrder || "id", sortDirection || "asc")) || [];
+  let cardList = abilityCards?.sort(customSort(sortOrder || "id", sortDirection || "asc")) || [];
 
   if (isCraftingMode && viewActiveHand) {
     cardList = cardList.filter((card) => activeDeck.includes(card.image));
@@ -186,7 +150,7 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
 
       if (decodedBuild && character?.class) {
         if (decodedBuild.characterClass !== character.class) {
-          setToastMessage(`Build is for a different class (${decodedBuild.characterClass})`);
+          setToastMessage(`El mazo es para otra clase (${decodedBuild.characterClass})`);
         } else {
           const idSet = new Set(decodedBuild.cardIds);
           const images = abilityCards?.filter((c) => idSet.has(c.id)).map((c) => c.image) || [];
@@ -210,7 +174,7 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
     const newUrl = new URL(window.location.href);
     newUrl.searchParams.set("build", code);
     navigator.clipboard.writeText(newUrl.toString());
-    setToastMessage("Build link copied to clipboard!");
+    setToastMessage("¡Enlace copiado al portapapeles!");
   };
 
   return (
@@ -229,20 +193,6 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
               />
             </div>
           </div>
-          {!spoilers.loading && (
-            <div className="slider">
-              <span>{"Level: " + (spoilers.level || "1")}</span>
-              <input
-                type="range"
-                name="level"
-                id="level"
-                min="1"
-                max="9"
-                onInput={updateLevel}
-                value={spoilers.level || 1}
-              />
-            </div>
-          )}
           <div>
             <div className="button-group">
               <button
@@ -252,24 +202,22 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
                   if (isCraftingMode) toggleCraftingMode();
                 }}
               >
-                Ability Cards
+                Cartas de Habilidad
               </button>
               <button
                 className={!showCharacterDetails && isCraftingMode ? "btn-selected" : ""}
-                disabled={!isCharacterUnlocked}
                 onClick={() => {
                   if (showCharacterDetails) setShowCharacterDetails(false);
                   if (!isCraftingMode) toggleCraftingMode();
                 }}
               >
-                Build Mode
+                Modo Mazo
               </button>
               <button
                 className={showCharacterDetails ? "btn-selected" : ""}
-                disabled={!isCharacterUnlocked}
                 onClick={() => setShowCharacterDetails(true)}
               >
-                Character Details
+                Detalles del personaje
               </button>
             </div>
           </div>
@@ -281,40 +229,40 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
           {character.linkLabel || character.link}
         </a>
       )}
-      {!spoilers.loading &&
-        (showCharacterDetails ? (
-          <CharacterDetails character={character} isCharacterUnlocked={isCharacterUnlocked} />
-        ) : (
-          <>
-            <CardList
-              cardList={cardList}
-              isCraftingMode={isCraftingMode}
-              activeDeck={activeDeck}
-              onCardToggle={(image) => toggleCard(image, character?.class, maxHandSize)}
-            />
-            {isCraftingMode && <div style={{ padding: "36px" }} />}
-          </>
-        ))}
+      {showCharacterDetails ? (
+        <CharacterDetails character={character} />
+      ) : (
+        <>
+          <CardList
+            cardList={cardList}
+            isCraftingMode={isCraftingMode}
+            activeDeck={activeDeck}
+            onCardToggle={(image) => toggleCard(image, character?.class, maxHandSize)}
+            translations={cardTranslations}
+          />
+          {isCraftingMode && <div style={{ padding: "36px" }} />}
+        </>
+      )}
       {showAdditionalCards && <AdditionalCards sections={additionalCards} />}
 
       {isCraftingMode && !showCharacterDetails && (
         <div className="build-toolbar" style={{ borderTopColor: character?.colour || "#555" }}>
           <span className="build-toolbar-label">
-            Cards Selected: {activeDeck.length} / {maxHandSize}
+            Cartas: {activeDeck.length} / {maxHandSize}
           </span>
           <div className="build-toolbar-buttons">
-            <button onClick={toggleViewActiveHand}>{viewActiveHand ? "View All Cards" : "View Active Hand"}</button>
-            <button onClick={handleShare}>Share</button>
+            <button onClick={toggleViewActiveHand}>{viewActiveHand ? "Ver Todas" : "Ver Mano Activa"}</button>
+            <button onClick={handleShare}>Compartir</button>
             <button
               onClick={() => {
                 clearDeck();
-                setToastMessage("Active Hand Cleared!");
+                setToastMessage("¡Mano limpiada!");
                 if (viewActiveHand) {
                   toggleViewActiveHand();
                 }
               }}
             >
-              Clear
+              Limpiar
             </button>
           </div>
         </div>
@@ -346,7 +294,7 @@ export const characterSearchResults = (query: { [key: string]: string | string[]
 
   const sorted =
     characterAbilityCards[game]?.[character?.class.toUpperCase()]
-      ?.map((card) => (card.name.endsWith("-back") ? { ...card, name: character?.name } : card))
+      ?.filter((card) => card.level !== 0)
       .sort(customSort("level", "asc")) || [];
 
   const additionalCards = characterAdditionalCards[game]?.[character?.class.toUpperCase()];

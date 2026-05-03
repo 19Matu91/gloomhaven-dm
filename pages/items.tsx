@@ -1,75 +1,32 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
 import { ChangeEvent, useEffect, useState } from "react";
 
-import { GameParams, Item, Option, Spoilers } from "../../common/types";
-import {
-  customSort,
-  getBaseUrl,
-  getDescription,
-  getPageColor,
-  getTitle,
-  isInRanges,
-  parseRanges,
-  verifyQueryParam,
-} from "../../common/utils";
-import CardList from "../../components/CardList";
-import Layout from "../../components/Layout";
-import Sort from "../../components/Sort";
-import { games } from "../../data/games";
-import { itemCards } from "../../data/item-cards";
-import { useSpoilers } from "../../hooks/useSpoilers";
+import { Item, Option } from "../common/types";
+import { customSort, getBaseUrl, getDescription, getPageColor, getTitle, isInRanges, parseRanges } from "../common/utils";
+import CardList from "../components/CardList";
+import Layout from "../components/Layout";
+import Sort from "../components/Sort";
+import { itemCards } from "../data/item-cards";
 
 const sortOrderOptions: Option[] = [
-  { id: "id", name: "Item Number" },
-  { id: "cost", name: "Cost" },
-  { id: "name", name: "Name" },
+  { id: "id", name: "Número" },
+  { id: "cost", name: "Coste" },
+  { id: "name", name: "Nombre" },
 ];
 
 const slotFilters: Option[] = [
-  { id: "head", name: "Head" },
-  { id: "body", name: "Body" },
-  { id: "1h", name: "1 Hand" },
-  { id: "2h", name: "2 Hands" },
-  { id: "legs", name: "Legs" },
-  { id: "small", name: "Small Item" },
+  { id: "head", name: "Cabeza" },
+  { id: "body", name: "Cuerpo" },
+  { id: "1h", name: "1 Mano" },
+  { id: "2h", name: "2 Manos" },
+  { id: "legs", name: "Piernas" },
+  { id: "small", name: "Objeto Pequeño" },
 ];
 
 const activationsFilters: Option[] = [
-  { id: "consumed", name: "Consumed" },
-  { id: "spent", name: "Spent" },
+  { id: "consumed", name: "Consumido" },
+  { id: "spent", name: "Gastado" },
 ];
-
-const itemSpoilerFilter = (spoilers: Spoilers): ((item: Item) => boolean) => {
-  return (card) => {
-    switch (card.source) {
-      case "prosperity":
-        return card.prosperity <= parseInt(String(spoilers.items.prosperity), 10);
-      case "random-design":
-        return !!spoilers.items.recipes;
-      case "solo-scenario":
-        return !!spoilers.items.solo;
-      case "other":
-        return !!spoilers.items.other;
-      case "fc":
-        return !!spoilers.items.fc;
-      case "jotl":
-        return true;
-      case "jotl1":
-        return !!spoilers.items.jotl1;
-      case "jotl2":
-        return !!spoilers.items.jotl2;
-      case "jotl3":
-        return !!spoilers.items.jotl3;
-      case "cs":
-      case "toa":
-      case "fh":
-        return true;
-      default:
-        return false;
-    }
-  };
-};
 
 type FilterProps = {
   activationFilter: string;
@@ -119,10 +76,6 @@ const Items = ({ searchResults }: PageProps) => {
   const [activationFilter, setActivationFilter] = useState(null);
   const [sortOrder, setsortOrder] = useState("id");
   const [sortDirection, setSortDirection] = useState("asc");
-  const { spoilers } = useSpoilers();
-
-  const router = useRouter();
-  const game = verifyQueryParam(router.query.game, "gh");
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(parseRanges(e.target.value));
@@ -154,8 +107,7 @@ const Items = ({ searchResults }: PageProps) => {
 
   const cardList =
     searchResults
-      ?.filter(itemSpoilerFilter(spoilers))
-      .filter((item) => {
+      ?.filter((item) => {
         if (search !== null && !isInRanges(item.id, search)) return false;
         if (slotFilter && item.slot !== slotFilter) return false;
         if (activationFilter === "consumed" && !item.consumed) return false;
@@ -165,7 +117,7 @@ const Items = ({ searchResults }: PageProps) => {
       .sort(customSort(sortOrder || "id", sortDirection || "asc")) || [];
 
   return (
-    <Layout description={getDescription(game, "Item Cards", searchResults)} title={getTitle(game, "Items")}>
+    <Layout description={getDescription("jotl", "Cartas de Objeto", searchResults)} title={getTitle("jotl", "Objetos")}>
       <div className="toolbar">
         <div className="toolbar-inner">
           <Sort
@@ -176,7 +128,7 @@ const Items = ({ searchResults }: PageProps) => {
             sortDirection={sortDirection}
           />
           <div className="flex" style={{ fontWeight: 600, justifyContent: "center" }}>
-            {"Item ID:"}
+            {"ID Objeto:"}
             <input className="id-filter" onChange={handleSearchChange} placeholder="1-10,15" />
           </div>
           <ItemFilters
@@ -187,38 +139,14 @@ const Items = ({ searchResults }: PageProps) => {
           />
         </div>
       </div>
-      {!spoilers.loading && <CardList cardList={cardList} showId />}
+      <CardList cardList={cardList} showId />
     </Layout>
   );
 };
 
 export default Items;
 
-export const getStaticPaths: GetStaticPaths<GameParams> = async () => {
-  return {
-    fallback: false,
-    paths: games.map((game) => ({
-      params: {
-        game: game.id,
-      },
-    })),
-  };
-};
-
-const itemSearchResults = (query: { [key: string]: string | string[] }) => {
-  const game = verifyQueryParam(query.game, "gh");
-  return itemCards[game]?.sort(customSort("id", "asc")) || [];
-};
-
-export const getStaticProps: GetStaticProps<PageProps, GameParams> = async (context) => {
-  const { game } = context.params;
-  const searchResults = itemSearchResults({
-    game: game,
-  });
-
-  return {
-    props: {
-      searchResults,
-    },
-  };
+export const getStaticProps: GetStaticProps<PageProps> = async () => {
+  const searchResults = itemCards["jotl"]?.sort(customSort("id", "asc")) || [];
+  return { props: { searchResults } };
 };

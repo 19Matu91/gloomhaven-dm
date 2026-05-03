@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\\\\pages\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(npm run *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\" -Recurse -File -Include \"*.tsx\", \"*.ts\", \"*.json\")",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\\\\data\" -Recurse -Directory)",
+      "Bash(Get-Content -Path \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\\\\data\\\\character-abilities\\\\jaws-of-the-lion.json\" -TotalCount 30)",
+      "Bash(ConvertFrom-Json)",
+      "Bash(Select-Object -First 1)",
+      "Bash(Get-Member)",
+      "Bash(node -e \"const d = require\\('./data/character-ability-cards.ts'\\); \")",
+      "Bash(powershell -Command \"Get-Content 'data\\\\character-ability-cards\\\\jotl.json' | ConvertFrom-Json | Measure-Object | Select-Object -ExpandProperty Count\")",
+      "PowerShell($data = Get-Content \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\\\\data\\\\character-abilities\\\\jaws-of-the-lion.json\" | ConvertFrom-Json; $data.Count; $data | Group-Object expansion | Select-Object Name, Count; $data[0])",
+      "Bash(gh api *)",
+      "WebFetch(domain:api.github.com)",
+      "PowerShell(gh api *)",
+      "Bash(curl -s \"https://api.github.com/repos/cmlenius/gloomhaven-card-browser/branches\")",
+      "Bash(curl -s \"https://api.github.com/repos/cmlenius/gloomhaven-card-browser/contents/images/character-ability-cards/jaws-of-the-lion?ref=images\")",
+      "Bash(curl -s \"https://api.github.com/repos/cmlenius/gloomhaven-card-browser/contents/images/character-ability-cards/jaws-of-the-lion/HA?ref=images\")",
+      "PowerShell($data = Get-Content \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\\\\data\\\\character-abilities\\\\jaws-of-the-lion.json\" | ConvertFrom-Json; $data | Select-Object -First 3 | ForEach-Object { $_.image })",
+      "Bash(node -e \"const j = require\\('fs'\\).readFileSync\\('data/card-translations.json','utf8'\\); const d = JSON.parse\\(j\\); console.log\\(Object.keys\\(d\\).length\\); console.log\\(JSON.stringify\\(d[Object.keys\\(d\\)[0]], null, 2\\)\\)\")",
+      "Bash(node -e \"const d = JSON.parse\\(require\\('fs'\\).readFileSync\\('data/card-translations.json','utf8'\\)\\); const k = Object.keys\\(d\\)[0]; console.log\\(k\\); console.log\\(JSON.stringify\\(d[k],null,2\\)\\); console.log\\('total:',Object.keys\\(d\\).length\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Usuario\\\\Proyects\\\\gloomhaven-dm\" -Recurse -Directory)"
+    ]
+  }
+}

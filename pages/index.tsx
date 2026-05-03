@@ -1,34 +1,22 @@
 import { GetStaticProps } from "next";
-import { useRouter } from "next/router";
 
-import { CharacterParams } from "../common/types";
-import { getCharacter, verifyQueryParam } from "../common/utils";
+import { getCharacter, getTitle } from "../common/utils";
 import Layout from "../components/Layout";
 import CharactersPage, { CharacterPageProps, characterSearchResults } from "../components/pages/CharactersPage";
 
 const Characters = ({ searchResults }: CharacterPageProps) => {
-  const router = useRouter();
-  const game = verifyQueryParam(router.query.game, "gh");
-  const character = getCharacter(game, null);
+  const character = getCharacter("jotl", "DE");
 
   return (
-    <Layout title="Gloomhaven Card Browser">
-      <CharactersPage character={character} game={game} searchResults={searchResults} />
+    <Layout title={getTitle("jotl", "Cartas")}>
+      <CharactersPage character={character} game="jotl" searchResults={searchResults} />
     </Layout>
   );
 };
 
 export default Characters;
 
-export const getStaticProps: GetStaticProps<CharacterPageProps, CharacterParams> = async () => {
-  const searchResults = characterSearchResults({
-    game: "gh",
-    character: "BR",
-  });
-
-  return {
-    props: {
-      searchResults,
-    },
-  };
+export const getStaticProps: GetStaticProps<CharacterPageProps> = async () => {
+  const searchResults = characterSearchResults({ game: "jotl", character: "DE" });
+  return { props: { searchResults } };
 };

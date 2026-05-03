@@ -11,12 +11,11 @@ import { monsterCards } from "../../data/monster-cards";
 
 type MonsterStatCardProps = {
   index: number;
-  game: string;
   handleIndexChange: () => void;
   monster: Monster;
 };
 
-const MonsterStatCard = ({ game, handleIndexChange, index, monster }: MonsterStatCardProps) => {
+const MonsterStatCard = ({ handleIndexChange, index, monster }: MonsterStatCardProps) => {
   const [rotation, setRotation] = useState(monster?.isVertical ? 0 : -90);
 
   const handleBtnClick = () => {
@@ -38,7 +37,7 @@ const MonsterStatCard = ({ game, handleIndexChange, index, monster }: MonsterSta
       <div
         className="monster-img-outer"
         style={{
-          paddingTop: monster?.isVertical && game !== "fh" ? "150%" : "100%",
+          paddingTop: monster?.isVertical ? "150%" : "100%",
         }}
       >
         {monster?.statCards?.map((img, idx) => (
@@ -83,7 +82,7 @@ const MonstersPage = ({ game, searchResults }: PageProps) => {
   };
 
   const hreffn = (newMonster: string) => {
-    return `/${game}/monsters/${newMonster}`;
+    return `/monsters/${newMonster}`;
   };
 
   useEffect(() => {
@@ -108,7 +107,6 @@ const MonstersPage = ({ game, searchResults }: PageProps) => {
         <div className="toolbar-inner">
           {monsterList && monsterList.length > 0 && (
             <Dropdown
-              href={hreffn}
               onChange={handleMonsterChange}
               options={searchResults.monsterList || []}
               value={monsterSearch}
@@ -127,7 +125,7 @@ const MonstersPage = ({ game, searchResults }: PageProps) => {
         }}
       >
         {monster?.statCards && monster?.statCards.length > 0 && (
-          <MonsterStatCard handleIndexChange={handleIndexChange} game={game} index={index} monster={monster} />
+          <MonsterStatCard handleIndexChange={handleIndexChange} index={index} monster={monster} />
         )}
         <CardList cardList={cardList} horizontal={horizontal} />
       </div>

@@ -54,9 +54,7 @@ export const useCraftingStore = create<CraftingState>((set, get) => ({
           activeDeck: [...currentDeck, cardImage],
         });
       } else {
-        try {
-          get().setToastMessage(`Max hand size of ${maxHandSize} reached!`);
-        } catch(e) {}
+        get().setToastMessage(`¡Mano llena! Máximo: ${maxHandSize}`);
       }
     }
   },

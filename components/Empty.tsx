@@ -5,8 +5,8 @@ const Empty = () => {
   return (
     <div className="empty">
       <FontAwesomeIcon icon={faBan} height="48px" />
-      <div>No Results</div>
-      <div>Check your Settings for spoiler configuration or try changing your search & filters</div>
+      <div>Sin Resultados</div>
+      <div>Revisa los Ajustes o cambia los filtros de búsqueda</div>
     </div>
   );
 };

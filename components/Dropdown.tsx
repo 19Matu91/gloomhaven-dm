@@ -1,44 +1,9 @@
-import Link from "next/link";
-import { useState } from "react";
-
 import { Option } from "../common/types";
 
 type DropdownProps = {
   onChange?: (s: string) => void;
-  href?: (s: string) => string;
   options: Option[];
   value: string;
-};
-
-export const DropdownNav = ({ href, options, value }: DropdownProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const currentOption = options.find((o) => o.id === value)?.name || "Unknown";
-
-  return (
-    <div
-      className={`dropdownnav ${isHovered ? "dropdownnav-hover" : ""}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setIsHovered(true)}
-    >
-      <div className="dropdownnav-anchor">{currentOption}</div>
-      <div className="dropdownnav-content" key={value}>
-        {options.map((opt) => (
-          <Link
-            key={opt.id}
-            href={href(opt.id)}
-            className="dropdownnav-option"
-            onClick={(e) => {
-              e.stopPropagation();
-              setTimeout(() => setIsHovered(false), 200);
-            }}
-          >
-            {opt.name}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
 };
 
 const Dropdown = ({ onChange, options, value }: DropdownProps) => {

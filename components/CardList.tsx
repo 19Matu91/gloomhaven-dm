@@ -170,7 +170,7 @@ const MultiLevelCard = ({ multiLevelCard }: MultiLevelCardProps) => {
     <div>
       <div className="multi-level-card-controller">
         <div className="slider">
-          <span>{"Level: " + (level || "1")}</span>
+          <span>{"Nivel: " + (level || "1")}</span>
           <input
             type="range"
             name="level"
@@ -208,7 +208,7 @@ export const MultiLevelCardList = ({ cardList }: MultiLevelCardListProp) => {
     <InfiniteScroll
       className="card-list"
       hasMore={data?.length < cardList.length}
-      loader={<h4 key={0}>Loading...</h4>}
+      loader={<h4 key={0}>Cargando...</h4>}
       loadMore={loadMore}
       pageStart={0}
     >
@@ -227,6 +227,30 @@ export const MultiLevelCardList = ({ cardList }: MultiLevelCardListProp) => {
   );
 };
 
+type CardTranslationEntry = {
+  titulo: string;
+  superior: string;
+  inferior: string;
+};
+
+type CardTranslationPanelProps = {
+  translation: CardTranslationEntry;
+};
+
+const CardTranslationPanel = ({ translation }: CardTranslationPanelProps) => (
+  <div className="card-translation">
+    <div className="card-translation-title">{translation.titulo}</div>
+    <div className="card-translation-half">
+      <div className="card-translation-label">Superior</div>
+      {translation.superior}
+    </div>
+    <div className="card-translation-half">
+      <div className="card-translation-label">Inferior</div>
+      {translation.inferior}
+    </div>
+  </div>
+);
+
 type CardListProps = {
   cardList: Card[];
   horizontal?: boolean;
@@ -235,6 +259,7 @@ type CardListProps = {
   isCraftingMode?: boolean;
   activeDeck?: string[];
   onCardToggle?: (image: string) => void;
+  translations?: Record<string, CardTranslationEntry>;
 };
 
 const CardList = ({
@@ -245,6 +270,7 @@ const CardList = ({
   isCraftingMode,
   activeDeck,
   onCardToggle,
+  translations,
 }: CardListProps) => {
   const [data, setData] = useState(cardList.slice(0, CARDS_PER_PAGE));
 
@@ -258,11 +284,13 @@ const CardList = ({
 
   if (data?.length === 0) return <Empty />;
 
+  const wrapperClass = horizontal ? "card-wrapper-horizontal" : "card-wrapper";
+
   return (
     <InfiniteScroll
       className="card-list"
       hasMore={data?.length < cardList.length}
-      loader={<h4 key={0}>Loading...</h4>}
+      loader={<h4 key={0}>Cargando...</h4>}
       loadMore={loadMore}
       pageStart={0}
     >
@@ -278,32 +306,36 @@ const CardList = ({
           if (!isBackCard && onCardToggle) onCardToggle(card.image);
         };
         const clickable = isCraftingMode && !isBackCard;
+        const translation = translations?.[card.image];
 
-        return card.imageBack ? (
-          <FlipCardWrapper
-            key={card.name}
-            card={card}
-            horizontal={horizontal}
-            showId={showId}
-            defaultBack={defaultBack}
-            isSelected={isSelected}
-            isCraftingMode={clickable}
-            onToggle={toggle}
-          />
-        ) : (
-          <Card
-            key={card.name}
-            card={card}
-            horizontal={horizontal}
-            showId={showId}
-            isSelected={isSelected}
-            isCraftingMode={clickable}
-            onToggle={toggle}
-          />
+        return (
+          <div key={card.image} className={wrapperClass}>
+            {card.imageBack ? (
+              <FlipCardWrapper
+                card={card}
+                horizontal={horizontal}
+                showId={showId}
+                defaultBack={defaultBack}
+                isSelected={isSelected}
+                isCraftingMode={clickable}
+                onToggle={toggle}
+              />
+            ) : (
+              <Card
+                card={card}
+                horizontal={horizontal}
+                showId={showId}
+                isSelected={isSelected}
+                isCraftingMode={clickable}
+                onToggle={toggle}
+              />
+            )}
+            {translation && !isBackCard && <CardTranslationPanel translation={translation} />}
+          </div>
         );
       })}
       {[...Array(4)].map((_, idx) => (
-        <div key={idx} className={horizontal ? "card-horizontal" : "card"} />
+        <div key={idx} className={wrapperClass} />
       ))}
     </InfiniteScroll>
   );

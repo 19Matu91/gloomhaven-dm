@@ -1,0 +1,142 @@
+﻿{
+  "character-ability-cards/jaws-of-the-lion/HA/jl-bombardment.png": {
+    "titulo": "Bombardeo",
+    "superior": "ATACAR 3. Rango 3. (Tres ataques separados, cada uno: ATACAR 3, Rango 3.) Carta de pérdida: usar con token de zona de efecto.",
+    "inferior": "MOVER 3. Todos los enemigos adyacentes sufren 1 de daño. EMPUJAR 1. Objetivo: todos los enemigos adyacentes."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-brutalize.png": {
+    "titulo": "Brutalizar",
+    "superior": "ATACAR 4. Añade +2 de Ataque y gana 1 exp si el objetivo tiene tu token Favorito; luego devuelve el token a su carta.",
+    "inferior": "ATACAR 5. Rango 4. ATURDIR. (Carta de pérdida, cuesta 1 exp.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-camaraderie.png": {
+    "titulo": "Camaradería",
+    "superior": "CURAR 3. Uno mismo. CURAR 3. Objetivo: un aliado adyacente. (Carta de pérdida de zona de efecto.)",
+    "inferior": "MOVER 3. Añade +2 de Ataque a tu próximo ataque este turno si estás adyacente a un aliado."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-care-package.png": {
+    "titulo": "Paquete de Cuidados",
+    "superior": "ATACAR 2. Rango 3. CURAR 2. Objetivo: un aliado adyacente al objetivo del ataque.",
+    "inferior": "MOVER 3. CURAR 1. Rango 1. (Carta verde de bono de ronda.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-center-mass.png": {
+    "titulo": "Al Centro",
+    "superior": "ATACAR 3. Rango 3.",
+    "inferior": "MOVER 3. EMPUJAR 2. Objetivo: un enemigo adyacente."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-close-cuts.png": {
+    "titulo": "Cortes Cercanos",
+    "superior": "ATACAR 3. (Sin rango — cuerpo a cuerpo. Con token de bendición gana 1 exp.) Área de efecto en hexágonos.",
+    "inferior": "ATACAR 2. MOVER 2."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-disorienting-barrage.png": {
+    "titulo": "Descarga Desorientadora",
+    "superior": "ATACAR 1. Rango 3. Objetivo 3. CONFUNDIR.",
+    "inferior": "MOVER 2. Todos los enemigos adyacentes sufren 1 de daño. MOVER 1. Todos los enemigos adyacentes sufren 2 de daño. MOVER 1 (carta de pérdida, gana 1 exp)."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-double-throw.png": {
+    "titulo": "Doble Lanzamiento",
+    "superior": "ATACAR 3. Rango 4. Objetivo 2. (Carta de pérdida, gana 2 exp.)",
+    "inferior": "Duplica el valor de tu próximo ataque este turno. (Carta de pérdida, gana 1 exp.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-excessive-force.png": {
+    "titulo": "Fuerza Excesiva",
+    "superior": "En tus próximos cinco ataques dirigidos a un enemigo que tenga tu token Favorito, añade +2 de Ataque. (Efecto persistente con 5 cargas; carta de pérdida al vaciar.)",
+    "inferior": "MOVER 3. ATACAR 2. Rango 2. (Carta de pérdida, gana 1 exp.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-executioners-axe.png": {
+    "titulo": "Hacha del Verdugo",
+    "superior": "Un enemigo normal o de élite adyacente sufre 12 de daño. (Carta de pérdida, gana 2 exp.)",
+    "inferior": "Si mataste a un enemigo este turno, devuelve tu token Favorito a su carta y gana 1 exp."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-extra-lift.png": {
+    "titulo": "Impulso Extra",
+    "superior": "ATACAR 2. Rango 3. (Sin token Favorito: +1 Ataque, +2 Rango, gana 1 exp.)",
+    "inferior": "MOVER 4. (Carta de pérdida de zona de efecto.) En tus próximos cuatro movimientos, añade +2 de Movimiento. (Efecto persistente con 4 cargas; carta de pérdida al vaciar.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-fancy-hat.png": {
+    "titulo": "Sombrero Elegante",
+    "superior": "MOVER 3. ESCUDO 2. (Carta de pérdida, gana 1 exp. Bono de ronda.)",
+    "inferior": "Añade +1 de Ataque a todos tus ataques este turno. (Bono de ronda.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-fearsome-efficiency.png": {
+    "titulo": "Eficiencia Temible",
+    "superior": "ATACAR 6. Rango 4. Si este ataque mata al objetivo, un enemigo adyacente al hex donde murió sufre X de daño, donde X es el daño sobrante. (Carta de pérdida, gana 2 exp.)",
+    "inferior": "ATACAR 1. Rango 3. Añade +2 de Ataque y gana 1 exp si mataste a un enemigo este turno."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-follow-through.png": {
+    "titulo": "Remate",
+    "superior": "ATACAR 2. Rango 4. Añade +2 de Ataque y gana 1 exp si el objetivo tiene tu token Favorito.",
+    "inferior": "MOVER 2. EMPUJAR 2. Objetivo: un enemigo adyacente. (Sin token Favorito: +2 Movimiento.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-heart-seeker.png": {
+    "titulo": "Buscacorazones",
+    "superior": "ATACAR 4. Rango 4. ATURDIR. (Sin token Favorito: HERIR, gana 1 exp.)",
+    "inferior": "Las próximas cuatro veces que mates a un enemigo, realiza una acción \"CURAR 3, Rango 2, BENDECIR\". (Efecto persistente con 4 cargas; carta de pérdida al vaciar.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-overwatch.png": {
+    "titulo": "Vigilancia",
+    "superior": "ATACAR 3. Rango 4. (Sin token Favorito: +1 Ataque, +1 Rango, gana 1 exp.)",
+    "inferior": "Las próximas cinco veces que un enemigo termine una habilidad de Mover dentro de Rango 5, realiza una acción \"ATACAR 2, Rango 5\" contra ese enemigo. (Efecto persistente con 5 cargas; carta de pérdida al vaciar.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-power-pitch.png": {
+    "titulo": "Lanzamiento Potente",
+    "superior": "ATACAR 6. Rango 3. (Carta de pérdida, gana 2 exp.)",
+    "inferior": "MOVER 3. (Bono de zona de efecto.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-quick-turnaround.png": {
+    "titulo": "Giro Rápido",
+    "superior": "ATACAR 4. Rango 3. EMPUJAR 2. (Sin token Favorito: +1 Rango, +2 Empujar, gana 1 exp.)",
+    "inferior": "MOVER 3. Si tu token Favorito está en tu hex o adyacente, puedes realizar SAQUEAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-repeat-shot.png": {
+    "titulo": "Disparo Repetido",
+    "superior": "ATACAR 3. Rango 3. Añade +2 de Ataque y gana 1 exp si el objetivo tiene tu token Favorito.",
+    "inferior": "ATACAR 5. Rango 3. (Carta de pérdida, gana 1 exp.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-retrieval.png": {
+    "titulo": "Recuperación",
+    "superior": "ATACAR 2. Si el objetivo tiene tu token Favorito, devuelve el token a su carta.",
+    "inferior": "MOVER 1. SAQUEAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-ricochet.png": {
+    "titulo": "Rebote",
+    "superior": "ATACAR 2. Rango 3. ATACAR 2. Objetivo: un enemigo diferente dentro de Rango 2 del objetivo del ataque anterior.",
+    "inferior": "En tus próximos cuatro ataques, cuando sea posible, un enemigo adyacente al objetivo sufre 2 de daño. (Efecto persistente con 4 cargas; carta de pérdida al vaciar.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-ripped-from-the-flesh.png": {
+    "titulo": "Arrancado de la Carne",
+    "superior": "SAQUEAR 1. Si un enemigo adyacente tiene tu token Favorito, puedes devolver el token a su carta; si lo haces, ese enemigo sufre 2 de daño y gana HERIDO.",
+    "inferior": "CURAR 3. Rango 2. Añade FORTALECER y gana 1 exp si mataste a un enemigo este turno. (Bono de zona de efecto.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-second-wind.png": {
+    "titulo": "Segundo Aliento",
+    "superior": "CURAR 6. Uno mismo. (Carta de pérdida, gana 2 exp.)",
+    "inferior": "MOVER 3. Añade +2 de Movimiento y gana 1 exp si mataste a un enemigo este turno."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-sharpened-blades.png": {
+    "titulo": "Hojas Afiladas",
+    "superior": "En tus próximos cinco ataques, añade +1 de Ataque y HERIR. (Efecto persistente con 5 cargas; carta de pérdida al vaciar.)",
+    "inferior": "MOVER 4. (Sin token Favorito: +2 Movimiento.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-shrapnel.png": {
+    "titulo": "Metralla",
+    "superior": "ATACAR 2. Rango 3. Objetivo 2. HERIR. (Sin token Favorito: +1 Objetivo, gana 1 exp.)",
+    "inferior": "Las próximas cinco veces que mates a un enemigo, todos los enemigos adyacentes al hex donde murió sufren 2 de daño. (Efecto persistente con 5 cargas; carta de pérdida al vaciar.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-stopping-power.png": {
+    "titulo": "Poder de Detención",
+    "superior": "ATACAR 3. Rango 2. (Sin token Favorito: +1 Rango, EMPUJAR 2, gana 1 exp.)",
+    "inferior": "MOVER 3. Saltar. INMOVILIZAR. Objetivo: todos los enemigos adyacentes a cualquier hex que hayas entrado durante el movimiento. (Carta de pérdida, gana 1 exp.)"
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-the-favorite.png": {
+    "titulo": "La Favorita",
+    "superior": "Coloca uno de tus tokens de personaje en esta carta. Puedes añadir +3 de Ataque a cualquiera de tus ataques a distancia moviendo el token de esta carta al objetivo tras resolver el ataque. Cuando ese objetivo muera, coloca el token en el hex donde murió. Si saqueas ese hex, devuelve el token a esta carta. (Efecto persistente, carta de pérdida al gastar 2 exp.)",
+    "inferior": "HERIR. Objetivo: un enemigo adyacente. MOVER 3. Saltar."
+  },
+  "character-ability-cards/jaws-of-the-lion/HA/jl-the-new-favorite.png": {
+    "titulo": "La Nueva Favorita",
+    "superior": "Coloca el token Hacha en esta carta. Puedes añadir +3 de Ataque, HERIR y EMPUJAR 1 a cualquiera de tus ataques a distancia moviendo el token de esta carta al objetivo tras resolver el ataque. Cuando ese objetivo muera, coloca el token en el hex donde murió. Si saqueas ese hex, devuelve el token a esta carta. Esta carta no puede estar activa mientras «La Favorita» esté activa. (Efecto persistente, carta de pérdida al gastar 2 exp.)",
+    "inferior": "ATACAR 2. INMOVILIZAR. MOVER 4. (Bono de zona de efecto.)"
+  }
+}

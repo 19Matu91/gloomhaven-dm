@@ -1,0 +1,142 @@
+﻿{
+  "character-ability-cards/jaws-of-the-lion/RG/jl-barbaric-instincts.png": {
+    "titulo": "Instintos Bárbaros",
+    "superior": "ESCUDO 1. ATRAER 1, Rango 2. Todos los enemigos adyacentes sufren 1 de daño. (PÉRDIDA)",
+    "inferior": "MOVER 2, 1 XP. ATACAR 1. HERIR."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-blade-dance.png": {
+    "titulo": "Danza de Hojas",
+    "superior": "ATACAR 1, Rango 3. [Elemental]: +1 ATACAR, ATRAER 2, 1 XP. MOVER 2. ATACAR 1, Rango 3. [Elemental]: +1 ATACAR, ATRAER 2, 1 XP.",
+    "inferior": "MOVER 4. SALTAR. Todos los enemigos por los que se pase sufren 1 de daño. [Elemental]: 2 de daño en su lugar, 1 XP. (PÉRDIDA)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-blinding-sickle.png": {
+    "titulo": "Hoz Cegadora",
+    "superior": "ATACAR 3, Rango 2. INMOVILIZAR.",
+    "inferior": "Todos los enemigos adyacentes sufren 1 de daño. SAQUEAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-burn-away-the-dark.png": {
+    "titulo": "Quemar la Oscuridad",
+    "superior": "ATACAR 1. Objetivo: todos los enemigos en 2 casillas. [Elemental]: HERIR, 1 XP.",
+    "inferior": "MOVER 2. DESARMAR. Objetivo: un enemigo adyacente. [Elemental Fuego] [Elemental Luz]."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-desert-night.png": {
+    "titulo": "Noche del Desierto",
+    "superior": "ATACAR 2. Objetivo: un enemigo en 2 casillas. DESARMAR.",
+    "inferior": "MOVER 6. SALTAR. 1 XP. (PÉRDIDA)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-fierce-brilliance.png": {
+    "titulo": "Brillantez Feroz",
+    "superior": "Las próximas cuatro veces que un enemigo entre en una casilla adyacente a ti, ese enemigo gana DESARMAR. (PERSISTENTE — se consume al usar los 4 cargas)",
+    "inferior": "MOVER 2. Todos los enemigos adyacentes sufren 2 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-flame-shroud.png": {
+    "titulo": "Manto de Llamas",
+    "superior": "Las próximas cinco veces que un enemigo entre en una casilla adyacente a ti, ese enemigo sufre 2 de daño. (PERSISTENTE — se consume al usar las 5 cargas)",
+    "inferior": "MOVER 4. [Elemental]: ESCUDO 1, 1 XP. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-flaming-sickle.png": {
+    "titulo": "Hoz Llameante",
+    "superior": "ATACAR 3, Rango 2. ATRAER 1.",
+    "inferior": "Todos los enemigos adyacentes sufren 1 de daño. SAQUEAR 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-flying-sickle.png": {
+    "titulo": "Hoz Voladora",
+    "superior": "ATACAR 5, Rango 4. ATRAER 3.",
+    "inferior": "ATACAR 2. [Elemental]: MOVER 2, 1 XP. ATACAR 2."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-harvest-sickle.png": {
+    "titulo": "Hoz de la Cosecha",
+    "superior": "ATACAR 4, Rango 2.",
+    "inferior": "MOVER 5. SAQUEAR en cada casilla que entres durante este movimiento. 1 XP. (PÉRDIDA)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-healing-sands.png": {
+    "titulo": "Arenas Sanadoras",
+    "superior": "CURAR 4. Uno mismo. 1 XP.",
+    "inferior": "MOVER 3. Todos los ataques que te tengan como objetivo ganan Desventaja esta ronda. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-honorable-fury.png": {
+    "titulo": "Furia Honorable",
+    "superior": "ATACAR 5, Rango 2. [Elemental Fuego]: +1 ATACAR, +2 Rango, todos los enemigos adyacentes al objetivo sufren 1 de daño. [Elemental Luz]: +1 ATACAR, Ventaja, CONFUNDIR.",
+    "inferior": "[Elemental]: MOVER 3, 1 XP. Todos los enemigos adyacentes sufren 3 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-horns-of-the-beast.png": {
+    "titulo": "Cuernos de la Bestia",
+    "superior": "ATACAR 4. EMPUJAR 1. Objetivo: todos los enemigos en el cono de 3 casillas. 1 XP. (PÉRDIDA)",
+    "inferior": "MOVER 2. ESCUDO 3. [Elemental]: +1 ESCUDO, 1 XP. BONO DE RONDA. (PÉRDIDA)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-no-fear.png": {
+    "titulo": "Sin Miedo",
+    "superior": "Cada vez que seas atacado esta ronda, gana ESCUDO X para ese ataque, donde X es el número de enemigos adyacentes a ti en el momento del ataque, hasta un máximo de 3. BONO DE RONDA.",
+    "inferior": "Las próximas cinco veces que un enemigo entre en una casilla adyacente a ti, realiza una acción de \"CURAR 3, Uno mismo\". (PERSISTENTE — se consume al usar las 5 cargas)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-precision-strike.png": {
+    "titulo": "Golpe de Precisión",
+    "superior": "ATACAR 4. Añade +3 ATACAR si el objetivo tiene una condición negativa. [Elemental]: Ventaja, 1 XP. (PÉRDIDA)",
+    "inferior": "MOVER 2. ATRAER 2, Rango 3."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-prismatic-sickle.png": {
+    "titulo": "Hoz Prismática",
+    "superior": "ATACAR 4, Rango 3. (consume cualquier elemento)",
+    "inferior": "SAQUEAR 2. (consume cualquier elemento)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-radiant-sickle.png": {
+    "titulo": "Hoz Radiante",
+    "superior": "ATACAR 4, Rango 2. Todos los enemigos adyacentes al objetivo sufren 1 de daño.",
+    "inferior": "MOVER 2. CURAR 2, Rango 2."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-sand-devil.png": {
+    "titulo": "Diablo de Arena",
+    "superior": "Coloca el Diablo de Arena en una casilla vacía adyacente. Se considera una trampa para los propósitos de enfoque y movimiento de monstruos. Al inicio de cada uno de tus turnos, puedes moverlo hasta 2 casillas y puedes forzar a cualquier figura encima de él a moverse con él. Cada vez que una figura entre en la casilla del diablo o viceversa (no al moverse juntos), esa figura sufre 1 de daño y gana CONFUNDIR. 2 XP. (PERSISTENTE — descarta al agotar cargas)",
+    "inferior": "MOVER 5."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-shield-of-the-desert.png": {
+    "titulo": "Escudo del Desierto",
+    "superior": "ATACAR 3. Objetivo: todos los enemigos en el cono de 2 casillas. [Elemental]: +1 ATACAR, EMPUJAR 1, 1 XP.",
+    "inferior": "ESCUDO 3. BONO DE RONDA. (PÉRDIDA)"
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-shield-spikes.png": {
+    "titulo": "Pinchos del Escudo",
+    "superior": "Cada vez que un enemigo adyacente te ataque, ese enemigo sufre daño igual a tu valor de ESCUDO. 2 XP. BONO DE RONDA. (PÉRDIDA)",
+    "inferior": "CURAR 2, Rango 2."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-shocking-advance.png": {
+    "titulo": "Avance Impactante",
+    "superior": "ATACAR 3. INMOVILIZAR. [Elemental]: ESCUDO 1, 1 XP. BONO DE RONDA.",
+    "inferior": "MOVER 3."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-soaring-shield.png": {
+    "titulo": "Escudo Elevado",
+    "superior": "MOVER 3. SALTAR. ATACAR 4. Objetivo: todos los enemigos adyacentes. ATURDIR. (PÉRDIDA)",
+    "inferior": "MOVER 3. SALTAR. ESCUDO 2. [Elemental]: +1 ESCUDO, 1 XP. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-strangling-chain.png": {
+    "titulo": "Cadena Estranguladora",
+    "superior": "ATACAR 3. INMOVILIZAR. Cada vez que el objetivo sea atacado esta ronda, sufre 1 de daño adicional. Para indicarlo, coloca uno de tus tokens de personaje sobre el objetivo. [Elemental]: 2 de daño en su lugar, 1 XP. BONO DE RONDA.",
+    "inferior": "MOVER 4. INMOVILIZAR. Objetivo: todos los enemigos adyacentes."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-swift-strength.png": {
+    "titulo": "Fuerza Veloz",
+    "superior": "ATACAR 2, Rango 2, Objetivo 2. ATRAER 1.",
+    "inferior": "MOVER 2. SALTAR. ESCUDO 1. BONO DE RONDA."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-twirling-stabs.png": {
+    "titulo": "Puñaladas Giratorias",
+    "superior": "ATACAR 2. Objetivo: todos los enemigos adyacentes. [Elemental]: +1 ATACAR. 1 XP.",
+    "inferior": "ATACAR 2. [Elemental]: HERIR, 1 XP."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-vicious-ballet.png": {
+    "titulo": "Ballet Vicioso",
+    "superior": "ATACAR 3. [Elemental Fuego]: Un aliado adyacente puede realizar una acción de \"ATACAR 3\", 1 XP. [Elemental Luz]: Un aliado adyacente diferente puede realizar una acción de \"ATACAR 3\", 1 XP.",
+    "inferior": "Un enemigo adyacente sufre 1 de daño. MOVER 2. Un enemigo adyacente sufre 1 de daño. MOVER 2. Un enemigo adyacente sufre 1 de daño."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-warmth-of-the-sun.png": {
+    "titulo": "Calor del Sol",
+    "superior": "ATACAR 3. Objetivo: todos los enemigos en el cono de 4 casillas. [Elemental]: +1 ATACAR, CONFUNDIR, 1 XP. (PÉRDIDA)",
+    "inferior": "CURAR 4, Rango 1."
+  },
+  "character-ability-cards/jaws-of-the-lion/RG/jl-warrior-of-the-sun.png": {
+    "titulo": "Guerrero del Sol",
+    "superior": "ESCUDO 1. INMOVILIZAR. Objetivo: todos los enemigos adyacentes. BONO DE RONDA.",
+    "inferior": "ATACAR 2. [Elemental]: +1 ATACAR, CONFUNDIR, 1 XP."
+  }
+}
