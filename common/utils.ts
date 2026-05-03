@@ -4,8 +4,8 @@ import { Card, Character, CharacterAbility, Game, SearchResult } from "./types";
 
 export const defaultColour = "#432423";
 export const defaultDescription =
-  "Gloomhaven Card Browser is a tool for viewing Ability, Item, Monster, Event, Building, and Pet cards from the games Gloomhaven, Frosthaven, Forgotten Circles, Jaws of the Lion, Crimson Circles, and Trail of Ashes";
-export const defaultTitle = "Gloomhaven Card Browser";
+  "Visor de cartas de Fauces del León — personajes, objetos y monstruos del juego de mesa Gloomhaven: Fauces del León. Por El Dragón de Madera.";
+export const defaultTitle = "El Dragón de Madera — Fauces del León";
 
 /**
  * Assigns stable 1-based sequential IDs to a sorted character ability card array.
@@ -66,11 +66,10 @@ export const getDescription = (gameId: string, subject: string, cards: Card[]): 
  */
 export const getTitle = (gameId: string, subject: string): string => {
   const gameName = games.find((g) => g.id === gameId)?.name;
-  const title = gameName + " " + subject;
 
-  if (!gameName || !subject || title.trim() == "") return defaultTitle;
+  if (!gameName || !subject) return defaultTitle;
 
-  return title.trim();
+  return `El Dragón de Madera — ${gameName} | ${subject}`;
 };
 
 /**

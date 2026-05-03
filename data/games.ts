@@ -9,7 +9,7 @@ const baseRoutes: Option[] = [
 export const games: Game[] = [
   {
     id: "jotl",
-    name: "Jaws of the Lion",
+    name: "Fauces del León",
     defaultClass: "DE",
     defaultMonster: "black-imp",
     routes: baseRoutes,

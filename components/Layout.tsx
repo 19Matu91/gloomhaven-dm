@@ -98,7 +98,8 @@ const Layout = ({ children, description, title }: LayoutProps) => {
         <title>{title || defaultTitle}</title>
         <meta name="description" content={description || defaultDescription} />
         <meta name="google-site-verification" content="dyv7-lOXQn9xEOYXMD6s0oQYUYuQzTGN-KkjuPlILxg" />
-        <link rel="icon" href={getBaseUrl() + "logo.png"} />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" sizes="any" />
       </Head>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-FFL6ZJNJ4T" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
