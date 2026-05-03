@@ -5,6 +5,7 @@ import Script from "next/script";
 import { useState } from "react";
 
 import { defaultDescription, defaultTitle, getBaseUrl } from "../common/utils";
+import { DragonIcon, DragonWordmark } from "./DragonLogo";
 
 const jotlRoutes = [
   { id: "characters", name: "Personajes" },
@@ -26,6 +27,10 @@ const TopBar = () => {
   return (
     <nav className="topbar">
       <div className="topbar-inner">
+        <Link href="/" className="topbar-logo">
+          <DragonIcon className="topbar-logo-icon" />
+          <DragonWordmark className="topbar-logo-wordmark" />
+        </Link>
         <div className="nav-desktop">
           {jotlRoutes.map((route) => (
             <Link
@@ -61,6 +66,25 @@ const TopBar = () => {
   );
 };
 
+const Footer = () => (
+  <footer className="site-footer">
+    <div className="site-footer-inner">
+      <div className="site-footer-logo">
+        <DragonIcon className="footer-logo-icon" />
+        <DragonWordmark className="footer-logo-wordmark" />
+      </div>
+      <p className="site-footer-attribution">
+        Esta web es un fork de{" "}
+        <a href="https://github.com/cmlenius/gloomhaven-card-browser" target="_blank" rel="noopener noreferrer">
+          cmlenius/gloomhaven-card-browser
+        </a>
+        . Gracias a todos sus contribuidores.
+      </p>
+      <p className="site-footer-copy">© El Dragón de Madera</p>
+    </div>
+  </footer>
+);
+
 type LayoutProps = {
   children?: React.ReactNode;
   description?: string;
@@ -87,6 +111,7 @@ const Layout = ({ children, description, title }: LayoutProps) => {
       </Script>
       <TopBar />
       <main className="main">{children}</main>
+      <Footer />
     </>
   );
 };
