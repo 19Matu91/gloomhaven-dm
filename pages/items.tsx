@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import { ChangeEvent, useEffect, useState } from "react";
 
 import { Item, Option } from "../common/types";
-import { customSort, getBaseUrl, getDescription, getPageColor, getTitle, isInRanges, parseRanges } from "../common/utils";
+import { customSort, getBaseUrl, getDescription, getTitle, isInRanges, parseRanges } from "../common/utils";
 import CardList from "../components/CardList";
 import Layout from "../components/Layout";
 import Sort from "../components/Sort";
@@ -101,9 +101,6 @@ const Items = ({ searchResults }: PageProps) => {
     setSortDirection(newValue);
   };
 
-  useEffect(() => {
-    document.documentElement.style.setProperty("--primary", getPageColor(null));
-  }, []);
 
   const cardList =
     searchResults

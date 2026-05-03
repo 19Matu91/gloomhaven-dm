@@ -1,16 +1,12 @@
 type ToastMessageProps = {
   message: string | null;
-  colour?: string;
 };
 
-const ToastMessage = ({ message, colour }: ToastMessageProps) => {
+const ToastMessage = ({ message }: ToastMessageProps) => {
   if (!message) return null;
 
   return (
-    <div
-      className="toast-message"
-      style={{ borderColor: colour || "gold" }}
-    >
+    <div className="toast-message">
       {message}
     </div>
   );

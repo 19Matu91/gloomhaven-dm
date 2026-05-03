@@ -114,9 +114,6 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
     cardList = cardList.filter((card) => activeDeck.includes(card.image));
   }
 
-  useEffect(() => {
-    if (character) document.documentElement.style.setProperty("--primary", character.colour);
-  }, [character]);
 
   useEffect(() => {
     if (isCraftingMode && activeDeckClass && character?.class && activeDeckClass !== character.class) {
@@ -161,7 +158,7 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
 
   return (
     <>
-      <ToastMessage message={toastMessage} colour={character?.colour} />
+      <ToastMessage message={toastMessage} />
       <div className="toolbar">
         <div className="toolbar-inner">
           <div>
@@ -226,7 +223,7 @@ const CharactersPage = ({ character, game, searchResults }: PageProps) => {
         </>
       )}
       {isCraftingMode && !showCharacterDetails && (
-        <div className="build-toolbar" style={{ borderTopColor: character?.colour || "#555" }}>
+        <div className="build-toolbar">
           <span className="build-toolbar-label">
             Cartas: {activeDeck.length} / {maxHandSize}
           </span>

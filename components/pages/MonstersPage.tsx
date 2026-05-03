@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { Monster, MonsterSearch } from "../../common/types";
-import { getBaseUrl, getGame, getPageColor, verifyQueryParam } from "../../common/utils";
+import { getBaseUrl, getGame, verifyQueryParam } from "../../common/utils";
 import CardList from "../../components/CardList";
 import Dropdown from "../../components/Dropdown";
 import { monsterCards } from "../../data/monster-cards";
@@ -85,9 +85,6 @@ const MonstersPage = ({ game, searchResults }: PageProps) => {
     return `/monsters/${newMonster}`;
   };
 
-  useEffect(() => {
-    document.documentElement.style.setProperty("--primary", getPageColor(null));
-  }, []);
 
   useEffect(() => {
     setIndex(0);
